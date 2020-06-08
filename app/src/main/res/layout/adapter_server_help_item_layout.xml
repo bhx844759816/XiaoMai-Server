@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="3dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="15dp"
+        android:background="#7971F5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:textColor="#AEAEAE"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/view"
+        app:layout_constraintLeft_toRightOf="@id/view"
+        app:layout_constraintTop_toTopOf="@id/view"
+        tools:text="套餐管理" />
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/flexBoxLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        app:layout_constraintLeft_toLeftOf="@id/view"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view"
+        app:flexWrap="wrap"
+        app:alignItems="center"
+        app:alignContent="flex_start"
+        app:flexDirection="row"
+        app:justifyContent="flex_start"
+        app:showDivider="beginning|middle"
+        app:dividerDrawable="@drawable/flex_divider_shape"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

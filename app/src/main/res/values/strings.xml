@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">校麦-服务助手</string>
+    <string name="now_loading">正在加载</string>
+    <string name="app_home_title">校麦-服务助手</string>
+    <string name="getSmsCode">获取验证码</string>
+    <string name="register">注册</string>
+    <string name="inputSmsCode">请输入验证码</string>
+    <string name="inputPassword">请输入密码</string>
+    <string name="inputPhone">请输入手机号</string>
+    <string name="callPhone">拨打电话</string>
+    <string name="serverMessage">客服消息</string>
+    <string name="onlineStatus">在线状态</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="dialog_width">250dp</dimen>
+    <dimen name="dialog_loading_width">100dp</dimen>
+    <dimen name="dialog_corner_radius">8dp</dimen>
+    <dimen name="titleTextSize">18sp</dimen>
+    <dimen name="dimension_50">50dp</dimen>
+    <dimen name="bar_height_userdef">@dimen/dimension_50</dimen>
+    <dimen name="bar_icon_height_userdef">28dp</dimen>
+</resources>

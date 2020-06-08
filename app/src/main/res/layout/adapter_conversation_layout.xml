@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@drawable/select_item_bg"
+    tools:ignore="SmallSp">
+    <View
+        android:id="@+id/center"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+    <ImageView
+        android:id="@+id/ivHeaderView"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@mipmap/icon_default_header"
+       />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="3dp"
+        android:textColor="#141414"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toRightOf="@id/ivHeaderView"
+        app:layout_constraintTop_toTopOf="@id/ivHeaderView"
+        tools:text="姓名" />
+
+    <TextView
+        android:id="@+id/tvChatMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="#999999"
+        android:textSize="10sp"
+        app:layout_constraintLeft_toLeftOf="@id/tvName"
+        app:layout_constraintRight_toLeftOf="@id/tvTime"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        tools:text="聊天内容聊天内容聊天内容" />
+
+    <TextView
+        android:id="@+id/tvChatUnReadMessageCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/shape_red_dot"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        tools:text="9"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/tvChatMessage"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvChatMessage"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:textColor="#141414"
+        android:textSize="10sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvName"
+        tools:text="19:00" />
+
+    <View
+        style="@style/DividerLineTheme"
+        android:layout_width="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/tvChatMessage" />
+</androidx.constraintlayout.widget.ConstraintLayout>

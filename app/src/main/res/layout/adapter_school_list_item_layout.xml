@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="18dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:gravity="center_vertical"
+    >
+    
+    <TextView
+
+        android:id="@+id/tvSchoolName"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:background="@mipmap/icon_list_item_bg"
+        android:layout_weight="11"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:text="郑州树青中等专业学校"
+        />
+    <TextView
+        android:id="@+id/tvDeviceError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/shape_list_item_red_dot"
+        android:textSize="18sp"
+        android:layout_marginLeft="13dp"
+        android:drawablePadding="8dp"
+        android:textColor="@color/content_text"
+        tools:text="5"
+
+        android:drawableStart="@drawable/shape_list_item_red_dot"
+        android:layout_marginStart="13dp" />
+    <TextView
+        android:id="@+id/tvDeviceNormal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:drawableLeft="@drawable/shape_list_item_red_dot"
+        android:textSize="18sp"
+        android:layout_marginLeft="13dp"
+        android:drawablePadding="8dp"
+        android:textColor="@color/content_text"
+        tools:text="5"
+        android:drawableStart="@drawable/shape_list_item_green_dot"
+        android:layout_marginStart="13dp" />
+</LinearLayout>

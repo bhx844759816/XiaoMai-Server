@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@mipmap/icon_back">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="个人信息"
+            android:textColor="@color/title"
+            android:textSize="@dimen/titleTextSize" />
+
+        <RelativeLayout
+            android:id="@+id/rlSave"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="保存"
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/ivUserAvatar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolBar" />
+
+    <TextView
+        android:id="@+id/tvUserAvatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="点击修改头像"
+        android:textColor="#7971F5"
+        app:layout_constraintLeft_toLeftOf="@id/ivUserAvatar"
+        app:layout_constraintRight_toRightOf="@id/ivUserAvatar"
+        app:layout_constraintTop_toBottomOf="@id/ivUserAvatar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvUserAvatar">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minEms="4"
+                android:text="客服昵称"
+                android:textColor="@color/defaultTextColor"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etUserNickName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="请输入用户昵称"
+                android:maxLines="1"
+                android:textColor="@color/default_text"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divider_line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minEms="4"
+                android:text="性别"
+                android:textColor="@color/defaultTextColor"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:id="@+id/rgSexSelect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbSexBoy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableLeft="@drawable/select_bottom_device_check_bg"
+                    android:drawablePadding="8dp"
+                    android:text="男"
+                    android:textSize="15sp" />
+
+                <RadioButton
+                    android:id="@+id/rbSexGirl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/select_bottom_device_check_bg"
+                    android:drawablePadding="8dp"
+                    android:text="女"
+                    android:textSize="15sp" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divider_line" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minEms="4"
+                android:text="年龄"
+                android:textColor="@color/defaultTextColor"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etUserAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="请输入年龄"
+                android:maxLines="1"
+                android:text="16"
+                android:textColor="@color/default_text"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

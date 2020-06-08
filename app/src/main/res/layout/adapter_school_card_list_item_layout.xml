@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="10dp"
+
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="13dp"
+            android:textColor="@color/default_text"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="李勤勤" />
+
+        <TextView
+            android:id="@+id/tvSchoolName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/default_text"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="@id/tvName"
+            app:layout_constraintTop_toBottomOf="@id/tvName"
+            tools:text="郑州树青中等专业学院" />
+
+        <TextView
+            android:id="@+id/tvPeopleCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/default_text"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/tvSchoolName"
+            app:layout_constraintTop_toBottomOf="@id/tvSchoolName"
+            tools:text="410213********5790" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="14dp"
+            android:textColor="#322626"
+            android:textSize="10sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="2020年5月3日" />
+
+        <TextView
+            android:id="@+id/tvCallPhone"
+            android:layout_width="85dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/shape_call_phone_bg"
+            android:drawableLeft="@mipmap/icon_call_phone"
+            android:gravity="center"
+            android:paddingLeft="8dp"
+            android:text="@string/callPhone"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            app:layout_constraintRight_toRightOf="@id/tvDate"
+            app:layout_constraintTop_toBottomOf="@id/tvDate" />
+
+        <LinearLayout
+            android:id="@+id/llOperateParent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            app:layout_constraintRight_toRightOf="@id/tvCallPhone"
+            app:layout_constraintTop_toBottomOf="@id/tvCallPhone">
+
+            <TextView
+                android:id="@+id/tvOperateSuccess"
+                android:layout_width="50dp"
+                android:layout_height="23dp"
+                android:background="@drawable/shape_hollow_fillet_rectangle_default"
+                android:gravity="center"
+                android:text="已办理"
+                android:textColor="@color/colorAccent"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tvOperateFail"
+                android:layout_width="50dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/shape_hollow_fillet_rectangle_default"
+                android:gravity="center"
+                android:text="办理失败"
+                android:textColor="@color/colorAccent"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvOperateState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:textColor="#322626"
+            android:textSize="13sp"
+            android:visibility="gone"
+            app:layout_constraintRight_toRightOf="@id/tvCallPhone"
+            app:layout_constraintTop_toBottomOf="@id/tvSchoolName"
+            tools:text="办理成功" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:hyphenate="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chat_menu_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical">
+    <!--输入容器-->
+    <com.guangzhida.xiaomai.chatlibrary.view.ChatPrimaryMenu
+        android:id="@+id/chatPrimaryMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <FrameLayout
+        android:id="@+id/extend_menu_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:visibility="gone">
+        <!--扩展View 包含发送图片 文件 视频-->
+        <com.guangzhida.xiaomai.chatlibrary.view.ChatExtendMenu
+            android:id="@+id/chatExtendMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="7dp"
+            android:visibility="gone" />
+        <!--表情容器-->
+        <com.guangzhida.xiaomai.chatlibrary.view.ChatEmojiGroupMenu
+            android:id="@+id/chatEmojiGroupMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</LinearLayout>
