@@ -60,6 +60,7 @@
         <activity android:name=".ui.WebActivity" />
         <activity android:name=".ui.PersonInfoActivity" />
         <activity android:name=".ui.MessageSettingActivity" />
+        <activity android:name=".ui.ForgetPasswordActivity" />
         <!--预览图片-->
         <activity android:name=".view.preview.PreviewResultListActivity" />
         <activity

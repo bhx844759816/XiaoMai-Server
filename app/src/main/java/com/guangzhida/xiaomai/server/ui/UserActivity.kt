@@ -53,7 +53,11 @@ class UserActivity : BaseActivity<UserViewModel>() {
         }
         //个人中心
         rlUserCenter.clickN {
-            startKtxActivity<PersonInfoActivity>()
+            if (BaseApplication.instance().mUserModel == null) {
+                startKtxActivity<LoginActivity>()
+            } else {
+                startKtxActivity<PersonInfoActivity>()
+            }
         }
         //消息设置
         rlMessageSetting.clickN {
@@ -85,8 +89,6 @@ class UserActivity : BaseActivity<UserViewModel>() {
         mViewModel.mModifyUserInfoResult.observe(this, Observer {
             putSpValue(USER_MODEL_KEY, it)
         })
-
-
 
         LiveDataBus.with(LiveDataBusKey.LOGIN_KEY, Boolean::class.java).observe(this, Observer {
             initUserInfo()

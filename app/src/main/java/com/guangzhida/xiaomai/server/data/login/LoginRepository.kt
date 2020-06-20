@@ -24,6 +24,18 @@ class LoginRepository {
     ): BaseResult<String> = mService.doRegister(phone, password, code, schoolId)
 
     /**
+     * 修改密码
+     */
+    suspend fun modifyPassword(
+        mobilePhone: String,
+        code: String,
+        password: String,
+        ensurePwd: String
+    ): BaseResult<String> {
+        return mService.modifyPassword(mobilePhone, code, password, ensurePwd)
+    }
+
+    /**
      * 发送验证码
      */
     suspend fun sendSmsCode(phone: String, type: String): BaseResult<String> =

@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 data class ConversationEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0,
-    val userName: String = "",//用户id
+    var userName: String = "",//用户id
     var avatarUrl: String = "", //头像
     var nickName: String = "", //昵称
     var isTop: Boolean = false, //是否置顶

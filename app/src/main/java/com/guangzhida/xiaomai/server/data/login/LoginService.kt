@@ -34,11 +34,22 @@ interface LoginService {
         , @Field("code") code: String, @Field("schoolId") schoolId: String
     ): BaseResult<String>
 
+
+    @FormUrlEncoded
+    @POST("network/customer_service/update_password")
+    suspend fun modifyPassword(
+        @Field("mobilePhone") mobilePhone: String,
+        @Field("code") code: String,
+        @Field("password") password: String,
+        @Field("ensurePwd") ensurePwd: String): BaseResult<String>
+
     /**
      * 发送验证码
-     * @param type 1校麦APP用户注册  2校麦APP找回密码  3校麦网管助手的注册
+     * @param type 1校麦APP用户注册  2校麦APP找回密码  3校麦网管助手的注册 5修改网管助手的密码
      */
     @FormUrlEncoded
     @POST("common/get_regiest_code")
     suspend fun sendSmsCode(@Field("mobilePhone") phone: String, @Field("type") type: String): BaseResult<String>
+
+
 }

@@ -22,6 +22,7 @@ class ChatRepository {
         return mService.getChatUserModelCall(userName)
     }
 
+
     companion object {
         @Volatile
         var INSTANCE: ChatRepository? = null

@@ -4,6 +4,10 @@ import android.app.ActivityManager
 import android.content.Context
 import android.content.Intent
 import android.os.Process
+import androidx.work.Constraints
+import androidx.work.Data
+import androidx.work.OneTimeWorkRequest
+import androidx.work.WorkManager
 import com.google.gson.Gson
 import com.guangzhida.xiaomai.server.BaseApplication
 import com.guangzhida.xiaomai.server.event.LiveDataBus
@@ -12,6 +16,7 @@ import com.guangzhida.xiaomai.server.event.messageCountChangeLiveData
 import com.guangzhida.xiaomai.server.model.CmdMessageModel
 import com.guangzhida.xiaomai.server.room.AppDataBase
 import com.guangzhida.xiaomai.server.room.entity.ConversationEntity
+import com.guangzhida.xiaomai.server.task.UpdateConversationTask
 import com.guangzhida.xiaomai.server.ui.MainActivity
 import com.guangzhida.xiaomai.server.utils.LogUtils
 import com.guangzhida.xiaomai.server.utils.ToastUtils
@@ -79,13 +84,7 @@ object ChatHelper {
             try {
                 messages?.let {
                     it.forEach { message ->
-                        val conversationEntity = mConversationDao?.queryByUserName(message.from)
-                        if (conversationEntity == null) {
-                            val entity = ConversationEntity(
-                                userName = message.from
-                            )
-                            mConversationDao?.insert(entity)
-                        }
+                        updateConversationEntity(message.from)
                         //提示
                         if (message.isUnread) {
                             notifier?.notify(
@@ -202,7 +201,25 @@ object ChatHelper {
         }
         return processName
     }
-
+    /**
+     * 通过接收到的消息保存到本地的会话中去
+     */
+    fun updateConversationEntity(userName: String) {
+        val constraints: Constraints = Constraints.Builder()
+            .build()
+        val data: Data = Data.Builder().putString(
+            "userName",
+            userName
+        ).build()
+        val updateConversationTask =
+            OneTimeWorkRequest.Builder(UpdateConversationTask::class.java)
+                .addTag("UpdateConversationTask")
+                .setInputData(data)
+                .setConstraints(constraints) //设置触发条件
+                .build()
+        WorkManager.getInstance(BaseApplication.instance().applicationContext)
+            .enqueue(updateConversationTask)
+    }
     /**
      * 添加检测的网络状况到本地会话
      */

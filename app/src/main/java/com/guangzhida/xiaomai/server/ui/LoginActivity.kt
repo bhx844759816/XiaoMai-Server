@@ -31,7 +31,7 @@ class LoginActivity : BaseActivity<LoginViewModel>() {
         }
         //忘记密码
         tvForgetPassword.clickN {
-
+            startKtxActivity<ForgetPasswordActivity>()
         }
         //去注册
         tvRegister.clickN {
