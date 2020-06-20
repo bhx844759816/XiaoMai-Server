@@ -17,4 +17,5 @@
     <color name="hint_text">#999999</color>
     <color name="content_text">#414141</color>
     <color name="btn_gray_normal">#c0c0c0</color>
+    <color name="hintTextColor">#1C1616</color>
 </resources>
